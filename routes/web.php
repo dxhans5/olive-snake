@@ -17,3 +17,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/create-optin-link', 'OptinController@createLink');
+
+Route::get('/lists', 'ListController@showLists');
+Route::get('/create-list', 'ListController@createList');
+Route::post('/create-list', 'ListController@saveList');

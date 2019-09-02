@@ -13,7 +13,15 @@
                         </div>
                     @endif
 
-                    @include('layouts.include.navigation')
+                    <div class="row justify-content-center">
+                      <div class="col-md-2">
+                      @include('layouts.include.navigation')
+                      </div>
+
+                      <div class="col-md-10">
+                      @include('layouts.include.forms.create-optin-link')
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
