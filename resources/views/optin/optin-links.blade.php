@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="card">
-                                      <div class="card-header">Email Lists</div>
+                                      <div class="card-header">Optin Links</div>
 
                                       <div class="card-body">
 
@@ -32,24 +32,22 @@
                                           <thead>
                                             <tr>
                                               <th scope="col">#</th>
-                                              <th scope="col">Name</th>
-                                              <th scope="col">Vendor</th>
-                                              <th scope="col">TID</th>
-                                              <th scope="col">Hop</th>
+                                              <th scope="col">Email List</th>
+                                              <th scope="col">IFrame</th>
+                                              <th scope="col">Tracking ID</th>
                                               <th scope="col">Created</th>
                                               <th scope="col">Updated</th>
                                             </tr>
                                           </thead>
                                           <tbody>
-                                            @foreach ($lists as $list)
+                                            @foreach ($links as $link)
                                             <tr>
-                                              <th scope="row">{{ $list->id }}</th>
-                                              <td>{{ $list->name }}</td>
-                                              <td>{{ $list->vendorId }}</td>
-                                              <td>{{ $list->trackingId }}</td>
-                                              <td><a href='{{ $list->hoplink }}' target='_blank'>{{ $list->hoplink }}</a></td>
-                                              <td>{{ $list->created_at }}</td>
-                                              <td>{{ $list->updated_at }}</td>
+                                              <th scope="row">{{ $link->id }}</th>
+                                              <td>{{ $link->list->name }}</td>
+                                              <td><a href='{{ $link->iframe }}' target='_blank'>{{ $link->iframe }}</a></td>
+                                              <td>{{ $link->list->trackingId }}</td>
+                                              <td>{{ $link->created_at }}</td>
+                                              <td>{{ $link->updated_at }}</td>
                                             </tr>
                                             @endforeach
                                           </tbody>

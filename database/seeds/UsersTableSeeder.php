@@ -15,6 +15,8 @@ class UsersTableSeeder extends Seeder
           'name' => 'Donny Hansen',
           'email' => 'dxhans5@gmail.com',
           'password' => bcrypt('H@nsen*1977'),
+          'created_at' => now(),
+          'updated_at' => now()
       ]);
     }
 }

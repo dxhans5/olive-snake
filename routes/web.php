@@ -18,7 +18,9 @@ Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('/optin-links', 'OptinController@showOptinLinks');
 Route::get('/create-optin-link', 'OptinController@createLink');
+Route::post('/create-optin-link', 'OptinController@saveLink');
 
 Route::get('/lists', 'ListController@showLists');
 Route::get('/create-list', 'ListController@createList');
