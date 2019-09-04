@@ -25,6 +25,11 @@ class OptinController extends Controller
       return view('optin/optin-links', ['links' => $links]);
     }
 
+    public function showOptin(Request $request, $id) {
+
+      return view('optin/optin_page');
+    }
+
     /**
      * Show the application dashboard.
      *

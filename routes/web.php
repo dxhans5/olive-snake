@@ -21,6 +21,7 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/optin-links', 'OptinController@showOptinLinks');
 Route::get('/create-optin-link', 'OptinController@createLink');
 Route::post('/create-optin-link', 'OptinController@saveLink');
+Route::get('/optin/{id}', 'OptinController@showOptin');
 
 Route::get('/lists', 'ListController@showLists');
 Route::get('/create-list', 'ListController@createList');
