@@ -6,7 +6,13 @@
 
                 <div class="card-body p-0">
                   <ul class="list-group">
+                    <li class="list-group-item"><a href='/optin-links'>Show Optin Links</a></li>
                     <li class="list-group-item"><a href='/create-optin-link'>Create Optin Link</a></li>
+                  </ul>
+                  <br/>
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href='/funnels'>Show Funnels</a></li>
+                    <li class="list-group-item"><a href='/create-funnel'>Create Funnel</a></li>
                   </ul>
                   <br/>
                   <ul class="list-group">

@@ -9,8 +9,8 @@ class OptinLink extends Model
 {
     protected $table = 'optin_links';
 
-    public function list()
+    public function funnel()
     {
-        return $this->hasOne('App\Models\EmailList', 'id', 'email_list_id');
+        return $this->hasOne('App\Models\Funnel', 'id', 'funnel_id');
     }
 }

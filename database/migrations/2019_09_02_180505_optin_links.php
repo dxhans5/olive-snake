@@ -13,14 +13,16 @@ class OptinLinks extends Migration
      */
     public function up()
     {
+      Schema::dropIfExists('optin_links');
       Schema::create('optin_links', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->unsignedBigInteger('email_list_id')->index();
+          $table->unsignedBigInteger('funnel_id')->index();
           $table->string('iframe');
+          $table->string('page_title');
           $table->timestamp('created_at')->nullable();
           $table->timestamp('updated_at')->nullable();
 
-          $table->foreign('email_list_id')->references('id')->on('email_lists');
+          $table->foreign('funnel_id')->references('id')->on('funnels');
       });
     }
 

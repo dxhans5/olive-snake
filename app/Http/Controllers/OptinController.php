@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OptinLink;
-use App\Models\EmailList;
+use App\Models\Funnel;
 
 class OptinController extends Controller
 {
@@ -19,15 +19,14 @@ class OptinController extends Controller
     }
 
     public function showOptinLinks() {
-      $link = new OptinLink;
-      $links = $link->get();
+      $links = OptinLink::all();
 
       return view('optin/optin-links', ['links' => $links]);
     }
 
     public function showOptin(Request $request, $id) {
-
-      return view('optin/optin_page');
+      $link = OptinLink::where('id', $id)->first();
+      return view('optin/optin_page', ['link' => $link]);
     }
 
     /**
@@ -37,10 +36,9 @@ class OptinController extends Controller
      */
     public function createLink()
     {
-        $list = new EmailList;
-        $lists = $list->all();
+        $funnels = Funnel::all();
 
-        return view('optin/create-optin-link', ['lists' => $lists]);
+        return view('optin/create-optin-link', ['funnels' => $funnels]);
     }
 
     public function saveLink(Request $request)
@@ -49,7 +47,8 @@ class OptinController extends Controller
 
       $link = new OptinLink;
       $link->iframe = $request->iframe;
-      $link->email_list_id = $request->email_list_id;
+      $link->page_title = 'Xixxix LLC - ' . $request->title;
+      $link->funnel_id = $request->funnel_id;
       $link->save();
 
       return redirect('/optin-links')->with('status', 'Optin Link created!');

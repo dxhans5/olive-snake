@@ -31,9 +31,10 @@
                                         <table class="table mb-0">
                                           <thead>
                                             <tr>
-                                              <th scope="col">#</th>
-                                              <th scope="col">Email List</th>
+                                              <th scope="col" style="width:100px;">#</th>
+                                              <th scope="col">Funnel</th>
                                               <th scope="col">IFrame</th>
+                                              <th scope="col">Page Title</th>
                                               <th scope="col">Tracking ID</th>
                                               <th scope="col">Created</th>
                                               <th scope="col">Updated</th>
@@ -42,10 +43,10 @@
                                           <tbody>
                                             @foreach ($links as $link)
                                             <tr>
-                                              <th scope="row">{{ $link->id }}</th>
-                                              <td>{{ $link->list->name }}</td>
+                                              <th scope="row">{{ $link->id }} - <a href='/optin/{{ $link->id }}' target='_blank'>View</a></th>
+                                              <td>{{ $link->funnel->name }}</td>
                                               <td><a href='{{ $link->iframe }}' target='_blank'>{{ $link->iframe }}</a></td>
-                                              <td>{{ $link->list->trackingId }}</td>
+                                              <td>{{ $link->page_title }}</td>
                                               <td>{{ $link->created_at }}</td>
                                               <td>{{ $link->updated_at }}</td>
                                             </tr>

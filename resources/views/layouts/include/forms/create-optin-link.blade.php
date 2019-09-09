@@ -14,10 +14,15 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="email_list_id">Email List</label>
-                    <select class="form-control" name="email_list_id" id="email_list_id">
-                      @foreach ($lists as $list)
-                      <option value='{{ $list->id }}'>{{ $list->name }}</option>
+                    <label for="title">Page Title</label>
+                    <input type="text" class="form-control" name="title" id="title">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="funnel">Funnel</label>
+                    <select class="form-control" name="funnel" id="funnel">
+                      @foreach ($funnels as $funnel)
+                      <option value='{{ $funnel->id }}'>{{ $funnel->name }}</option>
                       @endforeach
                     </select>
                   </div>
