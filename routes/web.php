@@ -23,6 +23,11 @@ Route::get('/create-funnel', 'FunnelController@createFunnel');
 Route::post('/create-funnel', 'FunnelController@saveFunnel');
 Route::get('/funnel/{id}', 'FunnelController@showFunnel');
 
+Route::get('/emails', 'EmailController@showEmails');
+Route::get('/create-email', 'EmailController@createEmail');
+Route::post('/create-email', 'EmailController@saveEmail');
+Route::get('/email/{id}', 'EmailController@showEmail');
+
 Route::get('/optin-links', 'OptinController@showOptinLinks');
 Route::get('/create-optin-link', 'OptinController@createLink');
 Route::post('/create-optin-link', 'OptinController@saveLink');

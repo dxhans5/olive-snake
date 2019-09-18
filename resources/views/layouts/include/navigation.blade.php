@@ -16,6 +16,11 @@
                   </ul>
                   <br/>
                   <ul class="list-group">
+                    <li class="list-group-item"><a href='/emails'>Show Emails</a></li>
+                    <li class="list-group-item"><a href='/create-email'>Create Email</a></li>
+                  </ul>
+                  <br/>
+                  <ul class="list-group">
                     <li class="list-group-item"><a href='/lists'>Show Lists</a></li>
                     <li class="list-group-item"><a href='/create-list'>Create Email List</a></li>
                   </ul>

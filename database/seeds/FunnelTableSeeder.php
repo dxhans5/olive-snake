@@ -13,6 +13,7 @@ class FunnelTableSeeder extends Seeder
     {
       DB::table('funnels')->insert([
           'name' => 'Test Funnel',
+          'stage_1_email_id' => 1,
           'created_at' => now(),
           'updated_at' => now()
       ]);

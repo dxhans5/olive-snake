@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Funnel;
+use App\Models\Email;
 
 class FunnelController extends Controller
 {
@@ -30,7 +31,10 @@ class FunnelController extends Controller
 
     public function createFunnel()
     {
-        return view('funnel/create-funnel');
+        $email = new Email;
+        $emails = $email->all();
+
+        return view('funnel/create-funnel', ['emails' => $emails]);
     }
 
     public function saveFunnel(Request $request)
@@ -39,6 +43,10 @@ class FunnelController extends Controller
 
       $funnel = new Funnel;
       $funnel->name = $request->name;
+      $funnel->stage_1_email_id = $request->stage_1_email_id;
+      $funnel->stage_2_email_id = $request->stage_2_email_id;
+      $funnel->stage_3_email_id = $request->stage_3_email_id;
+      $funnel->stage_4_email_id = $request->stage_4_email_id;
       $funnel->save();
 
       return redirect('/funnels')->with('status', 'Funnel created!');

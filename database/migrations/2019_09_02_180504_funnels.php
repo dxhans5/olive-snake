@@ -17,8 +17,17 @@ class Funnels extends Migration
       Schema::create('funnels', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->string('name')->index();
+          $table->unsignedBigInteger('stage_1_email_id')->index()->nullable();
+          $table->unsignedBigInteger('stage_2_email_id')->index()->nullable();
+          $table->unsignedBigInteger('stage_3_email_id')->index()->nullable();
+          $table->unsignedBigInteger('stage_4_email_id')->index()->nullable();
           $table->timestamp('created_at')->nullable();
           $table->timestamp('updated_at')->nullable();
+
+          $table->foreign('stage_1_email_id')->references('id')->on('emails');
+          $table->foreign('stage_2_email_id')->references('id')->on('emails');
+          $table->foreign('stage_3_email_id')->references('id')->on('emails');
+          $table->foreign('stage_4_email_id')->references('id')->on('emails');
       });
     }
 
